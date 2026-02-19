@@ -1,4 +1,138 @@
 /* Add screen styles below */
-a.active {
-    font-weight: bold;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*NOTE: Google fonts didn't have the option to only select regular and black in the way shown in the tutorial*/
+
+
+/*defining var in :root*/
+:root{
+    --main-bg-color: #e9e9e9;
+    --primary-text-color: #424242;
+    --accent-color: #FF3F3C;
+    --max-font: 900;
+    --default-font-size: 2em;
+}
+
+
+body{
+    background: var(--main-bg-color);
+    color: var(--primary-text-color);
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*title formatting*/
+
+header{
+    padding:20px;
+    margin-bottom: 100px;
+}
+
+header h1{
+    margin: 0;
+    font-weight: normal;
+    font-size: 36px;
+}
+
+
+
+main{
+    background: url('polaroid.png') no-repeat center 100px; /*sets image to not repeat & centered 100px from top of page*/
+    margin: 0 auto; /*'auto' adjusts the left/right margin based on width of container*/
+    width: 1000px;
+    font-size: 2em;
+}
+
+
+/*formatting of big text*/
+.hero{
+    text-align: center;
+    min-height: 800px;
+}
+
+.hero h2{
+    font-size: 4.5em;
+    line-height: 1em;
+    text-transform: uppercase;  /*makes text in caps*/
+    margin: 0;
+    font-weight: var(--max-font);
+}
+
+
+
+h3{
+    font-size: var(--default-font-size);
+    text-align: center;
+    font-weight: 900;
+}
+
+
+
+/*.details formatting*/
+
+.details ul{
+    padding-inline-start: 0;
+    padding-bottom: 75px; /*bottom padding for whole list container*/
+}
+
+.details ul li{
+    list-style-type: none; /*changes the bullet of list, in this case, no bullet so we can use qrcode*/
+    margin: 10px 0; /*top/bottom bottom margins for list items*/
+    padding: 0 0 0 75px; /*left padding for each list item*/
+    line-height: 75px;
+}
+
+.details ul li.wifi{
+     background: url('wifi-solid.svg') no-repeat center left;
+}
+.details ul li.cloud{
+     background: url('cloud-arrow-up-solid.svg') no-repeat center left;
+}
+.details ul li.qr{
+     background: url('qrcode-solid.svg') no-repeat center left;
+}
+.details ul li.photo-film{
+     background: url('photo-film-solid.svg') no-repeat center left;
+}
+
+
+
+/*formatting contact section*/
+
+.cta{
+margin-bottom: 100px;
+}
+
+form{
+    border-radius: 40px;
+    background: #E2E2E2;
+    padding: 50px;
+}
+
+
+/*there's a way to make the text input & button to flex, but I used static values*/
+input{
+    border:none;
+    display: inline;
+    margin: 10px;
+    font-family: 'Inter';
+    font-size: 24px;
+    justify-content: center;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+input[type=text]{
+    padding: 40px;
+    width: 600px;
+    background: #ECECEC;
+} 
+
+input[type=button] {
+    background: var(--accent-color);
+    color: white;
+    text-transform: uppercase;
+    font-weight: var(--max-font);
+    text-align: center;
+    width: 250px;
 }
